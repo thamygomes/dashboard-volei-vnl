@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Configuração da página
 st.set_page_config(
-    page_title="🏐 Previsão VNL 2026",
+    page_title="Previsão VNL 2026",
     page_icon="🏐",
     layout="wide"
 )
@@ -37,7 +37,7 @@ except:
 # SIDEBAR - FILTROS
 # =============================================================================
 
-st.sidebar.header("⚙️ Filtros")
+st.sidebar.header("Filtros")
 
 # Selecionar times
 times_disponiveis = df_previsao['time'].tolist()
@@ -58,7 +58,7 @@ col1, col2 = st.columns([2, 1])
 # =============================================================================
 
 with col1:
-    st.subheader("📊 Probabilidades de Título")
+    st.subheader("Probabilidades de Título")
     
     df_filtrado = df_previsao[df_previsao['time'].isin(times_selecionados)]
     df_filtrado = df_filtrado.sort_values('rating', ascending=False)
@@ -82,7 +82,7 @@ with col1:
 # =============================================================================
 
 with col2:
-    st.subheader("📈 Evolução do Rating")
+    st.subheader("Evolução do Rating")
     
     # Prepara dados para o gráfico de linhas
     df_evolucao = df_filtrado.melt(
@@ -109,7 +109,7 @@ with col2:
 # GRÁFICO 3: Radar (Perfil Técnico - se tiver dados de fundamentos)
 # =============================================================================
 
-st.subheader("🔄 Perfil Técnico Comparativo")
+st.subheader("Perfil Técnico Comparativo")
 
 # Cria dados fictícios de fundamentos para demonstração
 # Na prática, você carregaria do arquivo CSV com colunas: ataque, bloqueio, saque
@@ -136,7 +136,7 @@ if 'ataque' in df_previsao.columns:
     )
     st.plotly_chart(fig3, use_container_width=True)
 else:
-    st.info("ℹ️ Dados de fundamentos (ataque, bloqueio, saque) não disponíveis no CSV atual. Para ativar, inclua essas colunas no arquivo de dados.")
+    st.info("Dados de fundamentos (ataque, bloqueio, saque) não disponíveis no CSV atual. Para ativar, inclua essas colunas no arquivo de dados.")
 
 # =============================================================================
 # TABELA DE DADOS
@@ -155,4 +155,4 @@ with st.expander("📋 Ver tabela completa de dados"):
 # =============================================================================
 
 st.divider()
-st.caption("📊 Dados atualizados automaticamente via Prefect Cloud | Fonte: Volleyball World")
+st.caption("Dados atualizados automaticamente via Prefect Cloud | Fonte: Volleyball World")
