@@ -1,2 +1,3 @@
-# dashboard-volei-vnl
-Dashboard interativo de previsões da VNL 2026
+## Autor
+**Thamires Gomes**  
+[LinkedIn](https://www.linkedin.com/in/thamires-a-gomes)
